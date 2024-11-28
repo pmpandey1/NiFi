@@ -1,0 +1,11 @@
+{
+  "flow" : {
+    "createdTimestamp" : 1732799390957,
+    "description" : "Test Github Connection",
+    "identifier" : "NiFi-Test",
+    "lastModifiedTimestamp" : 1732799390957,
+    "name" : "NiFi Test",
+    "versionCount" : 0
+  },
+  "latest" : false
+}
