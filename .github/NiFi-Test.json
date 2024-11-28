@@ -1,4 +1,5 @@
 {
+  "externalControllerServices" : { },
   "flow" : {
     "createdTimestamp" : 1732799390957,
     "description" : "Test Github Connection",
@@ -7,5 +8,308 @@
     "name" : "NiFi Test",
     "versionCount" : 0
   },
-  "latest" : false
+  "flowContents" : {
+    "comments" : "",
+    "componentType" : "PROCESS_GROUP",
+    "connections" : [ {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "2fda9b35-f3f7-35a3-9f2b-4864735ac219",
+        "name" : "PutDynamoDB",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "954d1376-6901-3631-9071-29a3f98bd474",
+      "labelIndex" : 0,
+      "loadBalanceCompression" : "DO_NOT_COMPRESS",
+      "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+      "name" : "",
+      "partitioningAttribute" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "success" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "flow-contents-group",
+        "id" : "039ba49a-83fb-3461-b000-dbb519742efa",
+        "name" : "AttributesToCSV",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 0
+    } ],
+    "controllerServices" : [ ],
+    "defaultBackPressureDataSizeThreshold" : "1 GB",
+    "defaultBackPressureObjectThreshold" : 10000,
+    "defaultFlowFileExpiration" : "0 sec",
+    "executionEngine" : "INHERITED",
+    "externalControllerServiceReferences" : { },
+    "flowFileConcurrency" : "UNBOUNDED",
+    "flowFileOutboundPolicy" : "STREAM_WHEN_AVAILABLE",
+    "funnels" : [ ],
+    "identifier" : "flow-contents-group",
+    "inputPorts" : [ ],
+    "labels" : [ ],
+    "maxConcurrentTasks" : 1,
+    "name" : "Test",
+    "outputPorts" : [ ],
+    "position" : {
+      "x" : 0.0,
+      "y" : 0.0
+    },
+    "processGroups" : [ ],
+    "processors" : [ {
+      "autoTerminatedRelationships" : [ ],
+      "backoffMechanism" : "PENALIZE_FLOWFILE",
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-standard-nar",
+        "group" : "org.apache.nifi",
+        "version" : "2.0.0"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "039ba49a-83fb-3461-b000-dbb519742efa",
+      "maxBackoffPeriod" : "10 mins",
+      "name" : "AttributesToCSV",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : -179.99999999999977,
+        "y" : -83.38891601562494
+      },
+      "properties" : {
+        "null-value" : "false",
+        "include-core-attributes" : "true",
+        "destination" : "flowfile-attribute",
+        "include-schema" : "false"
+      },
+      "propertyDescriptors" : {
+        "null-value" : {
+          "displayName" : "Null Value",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "null-value",
+          "sensitive" : false
+        },
+        "include-core-attributes" : {
+          "displayName" : "Include Core Attributes",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "include-core-attributes",
+          "sensitive" : false
+        },
+        "attributes-regex" : {
+          "displayName" : "Attributes Regular Expression",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "attributes-regex",
+          "sensitive" : false
+        },
+        "destination" : {
+          "displayName" : "Destination",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "destination",
+          "sensitive" : false
+        },
+        "include-schema" : {
+          "displayName" : "Include Schema",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "include-schema",
+          "sensitive" : false
+        },
+        "attribute-list" : {
+          "displayName" : "Attribute List",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "attribute-list",
+          "sensitive" : false
+        }
+      },
+      "retriedRelationships" : [ ],
+      "retryCount" : 10,
+      "runDurationMillis" : 0,
+      "scheduledState" : "ENABLED",
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.standard.AttributesToCSV",
+      "yieldDuration" : "1 sec"
+    }, {
+      "autoTerminatedRelationships" : [ ],
+      "backoffMechanism" : "PENALIZE_FLOWFILE",
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-aws-nar",
+        "group" : "org.apache.nifi",
+        "version" : "2.0.0"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "2fda9b35-f3f7-35a3-9f2b-4864735ac219",
+      "maxBackoffPeriod" : "10 mins",
+      "name" : "PutDynamoDB",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : 439.0000000000002,
+        "y" : 190.61108398437506
+      },
+      "properties" : {
+        "Hash Key Value Type" : "string",
+        "Character set of document" : "UTF-8",
+        "Batch items for each request (between 1 and 50)" : "1",
+        "Range Key Value" : "${dynamodb.item.range.key.value}",
+        "Communications Timeout" : "30 secs",
+        "Region" : "us-west-2",
+        "Hash Key Value" : "${dynamodb.item.hash.key.value}",
+        "Range Key Value Type" : "string"
+      },
+      "propertyDescriptors" : {
+        "Table Name" : {
+          "displayName" : "Table Name",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Table Name",
+          "sensitive" : false
+        },
+        "Hash Key Value Type" : {
+          "displayName" : "Hash Key Value Type",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Hash Key Value Type",
+          "sensitive" : false
+        },
+        "Hash Key Name" : {
+          "displayName" : "Hash Key Name",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Hash Key Name",
+          "sensitive" : false
+        },
+        "Character set of document" : {
+          "displayName" : "Character set of document",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Character set of document",
+          "sensitive" : false
+        },
+        "proxy-configuration-service" : {
+          "displayName" : "Proxy Configuration Service",
+          "dynamic" : false,
+          "identifiesControllerService" : true,
+          "name" : "proxy-configuration-service",
+          "sensitive" : false
+        },
+        "Endpoint Override URL" : {
+          "displayName" : "Endpoint Override URL",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Endpoint Override URL",
+          "sensitive" : false
+        },
+        "Batch items for each request (between 1 and 50)" : {
+          "displayName" : "Batch items for each request (between 1 and 50)",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Batch items for each request (between 1 and 50)",
+          "sensitive" : false
+        },
+        "AWS Credentials Provider service" : {
+          "displayName" : "AWS Credentials Provider Service",
+          "dynamic" : false,
+          "identifiesControllerService" : true,
+          "name" : "AWS Credentials Provider service",
+          "sensitive" : false
+        },
+        "Range Key Name" : {
+          "displayName" : "Range Key Name",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Range Key Name",
+          "sensitive" : false
+        },
+        "SSL Context Service" : {
+          "displayName" : "SSL Context Service",
+          "dynamic" : false,
+          "identifiesControllerService" : true,
+          "name" : "SSL Context Service",
+          "sensitive" : false
+        },
+        "Range Key Value" : {
+          "displayName" : "Range Key Value",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Range Key Value",
+          "sensitive" : false
+        },
+        "Communications Timeout" : {
+          "displayName" : "Communications Timeout",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Communications Timeout",
+          "sensitive" : false
+        },
+        "Region" : {
+          "displayName" : "Region",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Region",
+          "sensitive" : false
+        },
+        "Json Document attribute" : {
+          "displayName" : "Json Document attribute",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Json Document attribute",
+          "sensitive" : false
+        },
+        "Hash Key Value" : {
+          "displayName" : "Hash Key Value",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Hash Key Value",
+          "sensitive" : false
+        },
+        "Range Key Value Type" : {
+          "displayName" : "Range Key Value Type",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Range Key Value Type",
+          "sensitive" : false
+        }
+      },
+      "retriedRelationships" : [ ],
+      "retryCount" : 10,
+      "runDurationMillis" : 0,
+      "scheduledState" : "ENABLED",
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.aws.dynamodb.PutDynamoDB",
+      "yieldDuration" : "1 sec"
+    } ],
+    "remoteProcessGroups" : [ ],
+    "scheduledState" : "ENABLED",
+    "statelessFlowTimeout" : "1 min"
+  },
+  "flowEncodingVersion" : "1.0",
+  "latest" : false,
+  "parameterContexts" : { },
+  "parameterProviders" : { },
+  "snapshotMetadata" : {
+    "author" : "bb19605d-9d43-480b-96d3-2ec89b85c465",
+    "flowIdentifier" : "NiFi-Test",
+    "timestamp" : 0
+  }
 }
